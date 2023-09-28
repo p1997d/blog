@@ -96,7 +96,6 @@ class IndexController extends Controller
             $post->rating = $likes - $dislikes;
             $post->save();
         }
-        return;
     }
     public function dislike(Post $post)
     {
@@ -117,7 +116,6 @@ class IndexController extends Controller
             $post->rating = $likes - $dislikes;
             $post->save();
         }
-        return;
     }
     public function search(Request $request)
     {

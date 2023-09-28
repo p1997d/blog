@@ -13,12 +13,10 @@ class CommentsConroller extends Controller
     {
         $data = $request->validated();
         PostComment::create($data);
-        return;
     }
     public function remove(Request $request)
     {
         PostComment::where('reply_id', $request['id'])->delete();
         PostComment::where('id', $request['id'])->delete();
-        return;
     }
 }

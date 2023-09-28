@@ -1,0 +1,17 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 align-items-end flex-fill ">
+    <ul class="nav nav-pills flex-column mb-auto" style="width: 280px;">
+        <li class="nav-item">
+            <a href="/" class="nav-link text-white {{ Request::is('/') ? 'active' : '' }}" aria-current="page">
+                Все потоки
+            </a>
+        </li>
+        @foreach ($categories as $category)
+            <li>
+                <a href="/category/{{ $category->title }}"
+                    class="nav-link text-white {{ Request::is('category/' . $category->title) ? 'active' : '' }}">
+                    {{ $category->title }}
+                </a>
+            </li>
+        @endforeach
+    </ul>
+</div>

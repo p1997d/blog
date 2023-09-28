@@ -1,0 +1,38 @@
+html,
+body,
+main {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.ck-editor__editable_inline {
+    min-height: 240px;
+}
+
+figure.image>img,
+div.card-body>p>img,
+div.card-text>p>img {
+    width: -webkit-fill-available;
+}
+
+.ck-content {
+    background: var(--bs-body-bg) !important;
+}
+
+.ck-button {
+    color: var(--bs-body-color) !important;
+}
+
+.ck-toolbar__items {
+    background: var(--bs-body-bg) !important;
+}
+
+.select2-selection {
+    background-color: var(--bs-body-bg) !important;
+    color: var(--bs-body-color) !important;
+}
+
+.select2-selection__choice__display {
+    color: var(--bs-body-color) !important;
+}

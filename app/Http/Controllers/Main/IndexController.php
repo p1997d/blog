@@ -35,14 +35,14 @@ class IndexController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'DESC')->paginate(10)->onEachSide(1);
 
         return view('main.index', array_merge($this->getData(), compact('posts')));
     }
     public function category($category)
     {
         $category_id = Category::firstWhere('title', $category)->id;
-        $posts = Post::where('category_id', $category_id)->get();
+        $posts = Post::where('category_id', $category_id)->paginate(10)->onEachSide(1);
 
         return view('main.index', array_merge($this->getData(), compact('posts')));
     }
@@ -73,7 +73,7 @@ class IndexController extends Controller
         $userPostsCount = Post::countByUser($user->id);
         $userLikesCount = PostLike::getLikeByUser($user->id)->count();
 
-        $posts = Post::where('author', $user->id)->get();
+        $posts = Post::where('author', $user->id)->paginate(10)->onEachSide(1);
 
         return view('main.user', array_merge($this->getData(), compact('posts', 'user', 'userPostsCount', 'userLikesCount')));
     }
@@ -122,7 +122,8 @@ class IndexController extends Controller
         $query = $request->input('query');
         $posts = Post::where('title', 'like', '%' . $query . '%')
             ->orWhere('content', 'like', '%' . $query . '%')
-            ->get();
+            ->paginate(10)
+            ->onEachSide(1);
 
         return view('main.index', array_merge($this->getData(), compact('posts', 'query')));
     }
@@ -132,8 +133,9 @@ class IndexController extends Controller
         $userPostsCount = Post::countByUser($user->id);
         $userLikesCount = PostLike::getLikeByUser($user->id)->count();
 
-        $posts = PostLike::getLikeByUser($user->id)->get()->pluck('post');
-
+        $likes = PostLike::getLikeByUser($user->id)->pluck('post_id');
+        $posts = Post::whereIn('id', $likes)->paginate(10)->onEachSide(1);
+        
         return view('main.user', array_merge($this->getData(), compact('posts', 'user', 'userPostsCount', 'userLikesCount')));
     }
 }

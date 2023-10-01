@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <div class="mb-3 text-center">
                         <h5 class="card-title"><a href="/user/{{ auth()->user()->id }}"
-                                class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">{{ auth()->user()->name }}</a>
+                                class="changeColorLink link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">{{ auth()->user()->name }}</a>
                         </h5>
                         @if (auth()->user()->role === 1)
                             <span class="badge rounded-pill bg-secondary">Модератор</span>

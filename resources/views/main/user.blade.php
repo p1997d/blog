@@ -31,9 +31,12 @@
             </div>
         </div>
     </div>
-    @foreach ($posts->reverse() as $post)
+    @foreach ($posts as $post)
         @include('main.includes.post')
     @endforeach
+    
+    {{ $posts->links('main.includes.pagination') }}
+
     <script>
         $(document).ready(function() {
             $(".card-text").each(function() {

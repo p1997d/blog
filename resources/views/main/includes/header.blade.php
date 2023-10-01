@@ -13,5 +13,6 @@
                 value="{{ $query }}">
             <button class="btn btn-outline-success" type="submit">Поиск</button>
         </form>
+        <button class="btn ms-2" id="btnSwitch"><i class="bi bi-sun-fill"></i></button>
     </div>
 </nav>

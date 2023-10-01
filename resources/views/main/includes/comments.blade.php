@@ -35,7 +35,7 @@
                 <div class="m-3">
                     <div class="card">
                         <div class="card-body">
-                            <a class="author link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                            <a class="author changeColorLink link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
                                 href="/user/{{ $comment['comment']->user->id }}">{{ $comment['comment']->user->name }}</a>
                             <span class="text-secondary">·</span>
                             <span
@@ -67,7 +67,7 @@
                     <div class="m-3 ps-5">
                         <div class="card">
                             <div class="card-body">
-                                <a class="author link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                                <a class="author changeColorLink link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
                                     href="/user/{{ $answerComment->user->id }}">{{ $answerComment->user->name }}</a>
                                 <span class="text-secondary">·</span>
                                 <span

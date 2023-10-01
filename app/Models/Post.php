@@ -14,6 +14,15 @@ class Post extends Model
     protected $quarde = false;
     protected $guarded = [];
 
+    protected $fillable = [
+        'title',
+        'content',
+        'category_id',
+        'author',
+        'created_at',
+        'updated_at',
+    ];
+
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'post_tags', 'post_id', 'tag_id');

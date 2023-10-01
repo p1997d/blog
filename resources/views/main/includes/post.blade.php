@@ -6,13 +6,13 @@
 @endphp
 <div class="card m-3">
     <div class="card-header">
-        <a class="author link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+        <a class="author link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover changeColorLink"
             href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a>
         <span class="text-secondary">·</span>
         <span class="time text-secondary pe-2">{{ Carbon::parse($post->created_at)->diffForHumans() }}</span>
         <h5 class="card-title">
             <a href="/post/{{ $post->id }}"
-                class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                class="link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover changeColorLink">
                 {{ $post->title }}
             </a>
         </h5>
@@ -25,7 +25,7 @@
             <div class="card-gradient w-100 h-50 position-absolute z-2"
                 style="bottom: 10%; background: linear-gradient(to bottom, transparent 50%, var(--bs-body-bg) 90%);">
             </div>
-            <a href="/post/{{ $post->id }}" class="btn btn-primary btn-sm position-relative z-3">Читать далее</a>
+            <a href="/post/{{ $post->id }}" class="card-button btn btn-primary btn-sm position-relative z-3">Читать далее</a>
         @endif
     </div>
     <div class="card-footer text-body-secondary">

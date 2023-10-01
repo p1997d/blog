@@ -26,7 +26,7 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence(5),
             'content' => $this->faker->paragraph,
             'category_id' => Category::inRandomOrder()->first()->id,
-            'author' => User::factory(),
+            'author' => User::inRandomOrder()->first()->id,
             'created_at' => time(),
             'updated_at' => time(),
         ];

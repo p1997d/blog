@@ -8,6 +8,7 @@
 @endphp
 
 @section('content')
-    @include('main.includes.post')
-    @include('main.includes.comments')
+    @include('main.post.index')
+    @include('main.comments.index')
+    @include('main.modals.editPostModal')
 @endsection

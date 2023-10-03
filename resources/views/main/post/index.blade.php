@@ -25,7 +25,7 @@
             <div class="card-gradient w-100 h-50 position-absolute z-2"
                 style="bottom: 10%; background: linear-gradient(to bottom, transparent 50%, var(--bs-body-bg) 90%);">
             </div>
-            <a href="/post/{{ $post->id }}" class="card-button btn btn-primary btn-sm position-relative z-3">Читать далее</a>
+            <a href="/post/{{ $post->id }}" class="card-button btn btn-primary btn-rs position-relative z-3">Читать далее</a>
         @endif
     </div>
     <div class="card-footer text-body-secondary">
@@ -36,7 +36,7 @@
         </div>
         <br>
         <div class="buttons" id="buttons{{ $post->id }}">
-            <div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
+            <div class="btn-group btn-group-rs" role="group" aria-label="Basic mixed styles example">
                 <button type="button" class="btn btn-{{ $post->getDislikeByUser() ? '' : 'outline-' }}danger"
                     onclick="setRating('dislike', {{ $post->id }})"><i class="bi bi-caret-down"></i>
                 </button>
@@ -46,21 +46,21 @@
                     <i class="bi bi-caret-up"></i>
                 </button>
             </div>
-            <button type="button" class="btn btn-outline-secondary btn-sm" disabled>
+            <button type="button" class="btn btn-outline-secondary btn-rs" disabled>
                 <i class="bi bi-eye"></i>
                 {{ $post->view }}
             </button>
-            <a type="button" class="btn btn-outline-secondary btn-sm" href="/post/{{ $post->id }}#comments">
+            <a type="button" class="btn btn-outline-secondary btn-rs" href="/post/{{ $post->id }}#comments">
                 <i class="bi bi-chat-left"></i>
                 {{ PostComment::getCommentsByPost($post->id)->count() }}
             </a>
             @auth
                 @if (Route::currentRouteName() === 'main.post' && auth()->user()->id === $post->user->id)
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal"
+                    <button type="button" class="btn btn-outline-secondary btn-rs" data-bs-toggle="modal"
                         data-bs-target="#editPost">
                         <i class="bi bi-pencil"></i>
                     </button>
-                    <a class="btn btn-outline-secondary btn-sm" href="{{ route('main.post.remove', $post->id) }}">
+                    <a class="btn btn-outline-secondary btn-rs" href="{{ route('main.post.remove', $post->id) }}">
                         <i class="bi bi-trash"></i>
                     </a>
                 @endif

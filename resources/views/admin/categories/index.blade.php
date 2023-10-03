@@ -69,5 +69,6 @@
                 </div>
             </div>
         </section>
+        {{ $categories->links('partials.pagination') }}
     </div>
 @endsection

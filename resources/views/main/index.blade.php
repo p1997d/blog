@@ -3,11 +3,19 @@
 @section('title', 'Блог')
 
 @section('content')
-    @foreach ($posts as $post)
-        @include('main.includes.post')
-    @endforeach
+    @if (count($posts) != 0)
+        @foreach ($posts as $post)
+            @include('main.post.index')
+        @endforeach
+    @else
+        <div class="card m-3">
+            <div class="card-body">
+                Посты не найдены
+            </div>
+        </div>
+    @endif
 
-    {{ $posts->links('main.includes.pagination') }}
+    {{ $posts->links('partials.pagination') }}
 
     <script>
         $(document).ready(function() {

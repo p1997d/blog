@@ -13,11 +13,22 @@ class PostComment extends Model
     protected $quarde = false;
     protected $guarded = [];
 
+    /**
+     * Определяет отношение между этой моделью и моделью User.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    /**
+     * Получает комментарии для указанного поста.
+     *
+     * @param  int  $postId
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
     public static function getCommentsByPost($postId)
     {
         $post = new static();

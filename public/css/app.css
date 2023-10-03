@@ -36,3 +36,28 @@ div.card-text>p>img {
 .select2-selection__choice__display {
     color: var(--bs-body-color) !important;
 }
+
+.main-container{
+    max-width: 720px;
+}
+.btn-rs, .btn-group-rs > .btn {
+    --bs-btn-padding-y: 0.25rem;
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-font-size: 0.875rem;
+    --bs-btn-border-radius: var(--bs-border-radius-sm);
+}
+
+@media (max-width: 992px) {
+    .increasing-on-resize {
+        font-size: calc(1.375rem + 1.5vw)!important;
+    }
+    .main-container{
+        max-width: none;
+    }
+    .btn-rs, .btn-group-rs > .btn {
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-padding-x: 1rem;
+        --bs-btn-font-size: 1.25rem;
+        --bs-btn-border-radius: var(--bs-border-radius-lg);
+    }
+}

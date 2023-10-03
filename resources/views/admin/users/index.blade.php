@@ -70,5 +70,6 @@
                 </div>
             </div>
         </section>
+        {{ $users->links('partials.pagination') }}
     </div>
 @endsection

@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        $users = User::orderBy('id', 'DESC')->paginate(10)->onEachSide(1);
         $roles = User::getRoles();
         return view('admin.users.index', compact('users', 'roles'));
     }

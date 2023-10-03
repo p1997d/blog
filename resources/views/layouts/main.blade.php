@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -17,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"
     integrity="sha512-7G7ueVi8m7Ldo2APeWMCoGjs4EjXDhJ20DrPglDQqy8fnxsFQZeJNtuQlTT0xoBQJzWRFp4+ikyMdzDOcW36kQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+
     <!-- jQuery Cookie -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
         integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
@@ -38,22 +37,25 @@
         href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/theme.js') }}" rel="stylesheet"></script>
 
     <title>@yield('title')</title>
 </head>
 
 <body>
-    <header>
-        @include('main.includes.header')
-    </header>
-    <main class="d-flex flex-nowrap justify-content-center">
-        @include('main.includes.categories')
-        <div class="container" style="max-width: 720px;">
+    @include('layouts.header')
+    <main class="d-flex flex-nowrap justify-content-center py-3">
+        <div class="d-flex flex-column flex-shrink-0 p-3 align-items-end flex-fill d-none d-lg-flex">
+            @include('main.categories.index')
+        </div>
+        <div class="container main-container increasing-on-resize">
             @yield('content')
         </div>
-        @include('main.includes.login')
-        @include('main.includes.modals')
+        <div class="d-flex flex-column flex-shrink-0 p-3 align-items-stretch flex-fill d-none d-lg-flex">
+            @include('main.login.index')
+        </div>
+        @include('main.modals.index')
     </main>
 </body>
 <script>

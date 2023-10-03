@@ -60,4 +60,10 @@ div.card-text>p>img {
         --bs-btn-font-size: 1.25rem;
         --bs-btn-border-radius: var(--bs-border-radius-lg);
     }
+    .pagination-rs {
+        --bs-pagination-padding-x: 1.5rem;
+        --bs-pagination-padding-y: 0.75rem;
+        --bs-pagination-font-size: 1.25rem;
+        --bs-pagination-border-radius: var(--bs-border-radius-lg);
+    }
 }

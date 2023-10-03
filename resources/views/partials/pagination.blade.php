@@ -1,7 +1,7 @@
 @if ($paginator->hasPages())
     <div class="m-3 py-3">
         <nav>
-            <ul class="pagination justify-content-center"">
+            <ul class="pagination justify-content-center pagination-rs">
                 @if ($paginator->onFirstPage())
                     <li class="page-item disabled"><span class="page-link"><i class="bi bi-chevron-left"></i></span></li>
                 @else

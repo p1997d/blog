@@ -37,8 +37,9 @@
         href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-    <link href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/theme.js') }}" rel="stylesheet"></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">	
+    <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/theme.js') }}"></script>
 
     <title>@yield('title')</title>
 </head>

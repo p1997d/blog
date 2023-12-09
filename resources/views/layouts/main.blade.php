@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -37,7 +38,7 @@
         href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">	
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
     <script src="{{ asset('js/theme.js') }}"></script>
 
@@ -50,7 +51,7 @@
         <div class="d-flex flex-column flex-shrink-0 p-3 align-items-end flex-fill d-none d-lg-flex">
             @include('main.categories.index')
         </div>
-        <div class="container main-container increasing-on-resize">
+        <div class="container main-container">
             @yield('content')
         </div>
         <div class="d-flex flex-column flex-shrink-0 p-3 align-items-stretch flex-fill d-none d-lg-flex">
